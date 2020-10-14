@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&B Afla Group</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+        body {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            width: 355px;
+            height: 360px;
+            background: #f8f8f8;
+            border: 7px solid #ebebeb;
+            padding: 25px 7px;
+        }
+
+        .radio {
+            height: 40px;
+            border: 1px solid #f8f8f8;
+            color: #848484;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0px 10px;
+        }
+
+        .radio span {
+            color: #a9a9a9;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            margin-left: 115px;
+        }
+
+        .radio:hover {
+            background: #ebf4f7;
+            border: 1px solid #deecf1;
+        }
+
+        .radio>input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            margin: 10px 0 0 7px;
+        }
+
+        .radio__text {
+            position: relative;
+            padding: 0 0 0 35px;
+        }
+
+        .radio__text:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            border: 3px solid #dadada;
+            border-radius: 50%;
+            background: #FFF;
+        }
+
+        .radio__text:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #0294bf;
+            border: 1px solid #0294bf;
+            opacity: 0;
+            transition: .2s;
+        }
+
+        .radio input:checked~.radio {
+            background: #ebf4f7;
+            border: 1px solid #deecf1;
+        }
+
+        .radio input:checked+.radio__text:after {
+            opacity: 1;
+        }
+
+        .radio input:checked+.radio__text:before {
+            border: 3px solid #34648e;
+            transition: .2s;
+        }
+
+        .count {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0px 5px;
+        }
+
+        .count__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .count__select {
+            height: 25px;
+            width: 45px;
+        }
+
+        .count__select:focus {
+            border: 1px solid #a7c4f3;
+            outline: none
+        }
+
+        .hr {
+            margin-top: 10px;
+            width: 340px;
+            height: 1px;
+            background: #d3d3d3;
+        }
+
+        .btn-by {
+            text-transform: uppercase;
+            font-size: 12px;
+            width: 150px;
+            height: 35px;
+            color: white;
+            border: none;
+            background-color: #33a845;
+            border: 1px solid #f8f8f8;
+            border-radius: 20px;
+            margin-top: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .btn-by:hover {
+            background-color: #f8f8f8;
+            border: 1px solid #33a845;
+            color: #33a845
+        }
+
+        .total__sum {
+            color: #848484;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+
+        .total__sum span {
+            color: #3388a8;
+        }
+
+        .total__currency {
+            font-size: 12px;
+            vertical-align: 3px;
+        }
+
+        .selected-plan {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #78afc4;
+            font-weight: 700;
+            margin-top: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='card'>
+        <form class='form' action="">
+            <label class="radio" for="#1">
+                <input class='radio__input' type="radio" name="plan" id="#1" value='13'>
+                <div class="radio__text">
+                    license plan #1 <span>$13 per license</span>
+                </div>
+            </label>
+            <label class="radio" class="label" for="#2">
+                <input class='radio__input' type="radio" name="plan" id="#2" value="22">
+                <div class="radio__text">
+                    license plan #2 <span>$22 per license</span>
+                </div>
+            </label>
+            <label class="radio" class="label" for="#3">
+                <input class='radio__input' type="radio" name="plan" id="#3" value="34">
+                <div class="radio__text">
+                    license plan #3 <span>$34 per license</span>
+                </div>
+            </label>
+            <div class="hr"></div>
+            <div class="count">
+                <p class="count__text">Numder of licenses: </p>
+                <select name="count__select" id="count__select" class="count__select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="hr"></div>
+            <div class="total__sum">Total: <span class="total__value">$0</span><span class="total__currency">us</span>
+            </div>
+            <button class="btn-by" type="submit">Buy now</button>
+            <div class="selected-plan">Selected plan: <span class="selected-plan__lic">none</span></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
